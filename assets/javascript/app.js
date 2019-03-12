@@ -1,5 +1,5 @@
-//create an on-click function to start the game and display the trivia questions
-$("#start").on("click", function() {
+//create an on-click function to start the game and then display the trivia questions
+$("#startBtn").on("click", function() {
     game.start();
 });
 
@@ -45,11 +45,11 @@ var questions = [{
     answers:["Strippers", "Hot Tile Roofers", "Miners", "Therapists"],
     correctAnswer: "Miners"
 }];
-
+//object and method that start the game
 var game = {
     correct: 0,
     inCorrect: 0,
-    counter: 10,
+    counter: 60,
     countDown: function () {
         game.counter--;
         $("#counter").html(game.counter)
@@ -61,7 +61,7 @@ var game = {
     start: function () {
         timer= setInterval(game.countDown, 1000);
         $("#subContainer").prepend('<h2>Time Left: <span id="counter">60</span> Seconds');
-        $("#start").remove();
+        $("#startBtn").remove();
         for (var i=0; i < questions.length; i++) {
             $("#subContainer").append('<h2>' + questions[i].question + '</h2>');
             for (var j=0; j < questions[i].answers.length; j++) {
@@ -141,7 +141,7 @@ var game = {
                 game.inCorrect++;
             }
         });
-
+        
         this.result();
         },
         //function to be called when the time runs out
@@ -152,6 +152,8 @@ var game = {
             $('#subContainer').append("<h3> Correct Answers: " + this.correct + "<h3>");
             $('#subContainer').append("<h3> Incorrect Answers: " + this.inCorrect + "<h3>");
             $('#subContainer').append("<h3> Unanswered: " + (questions.length - (this.inCorrect+this.correct))+"</h3>");
+           
+            
         }
 
     }

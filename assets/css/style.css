@@ -1,0 +1,33 @@
+body {
+    background-image: url(../images/galaxy.jpg);
+}
+
+#gameTitle {
+    color: rgb(43, 153, 226);
+    text-align: center;
+    padding-top: 50px
+    
+}
+
+#startBtn {
+    background-color: rgba(84, 96, 161, 0.918);
+    border: 2px solid rgb(43, 153, 226);
+    border-radius: 25px;
+    text-align: center;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    
+}
+
+#subContainer {
+    text-align: center;
+    color: white;
+    
+}
+
+#counter {
+    color: rgb(13, 230, 13);
+}
+
+h3 {
+    color: blueviolet
+}
